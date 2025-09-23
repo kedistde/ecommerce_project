@@ -13,6 +13,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['Kidy.pythonanywhere.com']
 
+# Database configuration (PythonAnywhere MySQL)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Kidy$ecommerce',
+        'USER': 'Kidy',
+        'PASSWORD': 'adminadmin',  # Set in PythonAnywhere Databases tab
+        'HOST': 'Kidy.mysql.pythonanywhere-services.com',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+    }
+}
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,13 +57,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ecommerce_api.urls'
 
+# Template configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/templates')],  # Point to your templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -60,14 +75,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ecommerce_api.wsgi.application'
-
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -91,10 +98,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -114,6 +117,14 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
     ],
 }
+# Static files configuration
+STATIC_URL = '/static/'
+STATIC_ROOT = '/home/Kidy/ecommerce_project/ecommerce_backend/staticfiles'
+
+# Media files configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/Kidy/ecommerce_project/ecommerce_backend/media'
+
 
 # JWT Settings
 SIMPLE_JWT = {
@@ -124,8 +135,6 @@ SIMPLE_JWT = {
 }
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # For development only
-
-# Media files
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CORS_ALLOWED_ORIGINS = [
+    "https://Kidy.pythonanywhere.com",
+]
