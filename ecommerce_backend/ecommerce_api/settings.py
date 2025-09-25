@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # Local apps
     'api',
     'frontend',
-    'ecommerce_api'
+    #'ecommerce_api'
 ]
 
 MIDDLEWARE = [
