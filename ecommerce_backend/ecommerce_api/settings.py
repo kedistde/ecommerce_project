@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     # Local apps
-    #'api',
-    #'frontend',
+    'api',
+    'frontend',
     #'ecommerce_api'
 ]
 
