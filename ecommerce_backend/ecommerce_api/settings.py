@@ -119,12 +119,12 @@ REST_FRAMEWORK = {
     ],
 }
 # Static files configuration
-STATIC_URL = '/static/'
-STATIC_ROOT = '/home/Kidy/ecommerce_project/ecommerce_backend/staticfiles'
-
+#STATIC_URL = '/static/'
+#STATIC_ROOT = '/home/Kidy/ecommerce_project/ecommerce_backend/staticfiles'
+#
 # Media files configuration
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/Kidy/ecommerce_project/ecommerce_backend/media'
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = '/home/Kidy/ecommerce_project/ecommerce_backend/media'
 
 
 # JWT Settings
