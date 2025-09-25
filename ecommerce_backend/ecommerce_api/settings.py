@@ -17,9 +17,9 @@ ALLOWED_HOSTS = ['Kidy.pythonanywhere.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Kidy$ecommerce',
-        'USER': 'Kidy',
-        'PASSWORD': 'adminadmin',  # Set in PythonAnywhere Databases tab
+        'NAME': 'Kidy$Kidyecommerce_123',
+        'USER': 'adminadmin',
+        'PASSWORD': 'adminadmin',  
         'HOST': 'Kidy.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Local apps
     'api',
     'frontend',
+    'ecommerce_api'
 ]
 
 MIDDLEWARE = [
